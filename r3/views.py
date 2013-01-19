@@ -3,6 +3,7 @@ from django.template import Context
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext, Template
+from models import Routes
 import json
 
 def hello(request):
