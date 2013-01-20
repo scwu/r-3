@@ -1,4 +1,5 @@
 import jsonrpclib
+from models import Routes
 
 northeast = set(["Philadelphia, Pennsylvania (PHL)", "Boston, Massachusetts (BOS)", "Baltimore, Maryland (BWI)", "Hartford, Connecticut (BDL)", "New York, New York (JFK)", "New York, New York (LGA)", "Newark, New Jersey (EWR)", "Washington, D.C. (IAD)", "Washington, D.C. (DCA)"])
 texas = set(["San Antonio, Texas (SAT)", "Austin, Texas (AUS)", "Dallas, Texas (DFW)", "Houston, Texas (IAH)", "Houston, Texas (HOU)"])
@@ -38,37 +39,34 @@ request = {
 	"currency": "USD"
 }
 
-try:
-    response = proxy.search(request)
+response = proxy.search(request)
 
-    journeys = response['journeys']
+journeys = response['journeys']
 
-    for j in range(3):
-        print "Journey: %s %s" % (j+1, journeys[j])
-        print "these"
-        origCode = journeys[j]['flights'][0]['departure']
-        print "are"
-        destCode = journeys[j]['flights'][0]['arrival']
-        print "the"
-        orig = getCity(origCode)
-        print 'orig ' + orig
-        print "times"
-        dest = getCity(destCode)
-        print "that"
-        deptTime = journeys[j]['flights'][0]['departureDate']
-        print "try"
-        arrivTime = journeys[j]['flights'][0]['arrivalDate']
-        print "men"
-        airline = journeys[j]['flights'][0]['carrier']
-        print "souls"
-        price = journeys[j]['price']
-        print "clara"
-        now = 'lalalala'
-        print "is"
-        duration = (float(journeys[j]['flights'][0]['miles'])/500) * 60
-        print "cool"
-        d = Routes(origin=orig,destination=dest,origin_address=deptCode,origin_time=deptTime,destination_address=arrivalCode,destination_time=arrivTime,brand=airline,types='plane',cost=price,time=duration, current_time=now)
-        print "catz"
-        d.save()
-except:
-    print "Error connecting to Miniapi service!"
+for j in range(3):
+    print "Journey: %s %s" % (j+1, journeys[j])
+    print "these"
+    origCode = journeys[j]['flights'][0]['departure']
+    print "are"
+    destCode = journeys[j]['flights'][0]['arrival']
+    print "the"
+    orig = getCity(origCode)
+    print 'orig ' + orig
+    print "times"
+    dest = getCity(destCode)
+    print "that"
+    deptTime = journeys[j]['flights'][0]['departureDate']
+    print "try"
+    arrivTime = journeys[j]['flights'][0]['arrivalDate']
+    print "men"
+    airline = journeys[j]['flights'][0]['carrier']
+    print "souls"
+    price = journeys[j]['price']
+    print "clara"
+    now = 'lalalala'
+    print "is"
+    duration = (float(journeys[j]['flights'][0]['miles'])/500) * 60
+    print "cool"
+    d = Routes(origin=orig,destination=dest,origin_address=deptCode,origin_time=deptTime,destination_address=arrivalCode,destination_time=arrivTime,brand=airline,types='plane',cost=price,time=duration, current_time=now)
+    print "catz"
+    d.save()
