@@ -11,3 +11,4 @@ southeast = set(["Atlanta, Georgia (ATL)", "Memphis, Tennessee (MEM)", "Nashvill
 greatLakes = set(["Minneapolis, Minnesota (MSP)", "Chicago, Illinois (MDW)", "Chicago, Illinois (ORD)", "Detroit, Michigan (DTW)"])
 ohio = set(["Cleveland, Ohio (CLE)", "Cincinnati, Ohio (CVG)", "Columbus, Ohio (CMH)", "Pittsburgh, Pennsylvania (PIT)"])
 northCarolina = set(["Charlotte, North Carolina (CLT)", "Raleigh, North Carolina (RDU)"])
+
