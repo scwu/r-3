@@ -15,7 +15,8 @@ leave_date = ''
 return_date = ''
 own_car = ''
 can_drive = ''
-
+time_weight = ''
+cost_weight = ''
 def hello(request):
 	return render_to_response('index.html')
 
@@ -28,6 +29,8 @@ def find(request):
 	return_date = request.POST['returnd']
 	own_car = request.POST['own']
 	can_drive = request.POST['can']
+	cost_weight = request.POST['cost']
+	time_weight = 10 - cost_weight	
 	#ALGO HERE YO
 	#MAKE THAT SHIT JSON!!!!
 	#send it back to js
