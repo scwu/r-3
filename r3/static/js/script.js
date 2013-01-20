@@ -6,7 +6,7 @@ $(document).ready(function() {
 		var return_date = $('#inputField2').val();
 		var own_car = $('input#car').is(':checked');
 		var can_drive = $('input#drive').is(':checked');
-	  var cost = $("#cost_value").val();
+    console.log(start);
     console.log("hi");
 
     $.ajax({
@@ -19,9 +19,12 @@ $(document).ready(function() {
         'returnd' : return_date,
         'own' : own_car,
         'can' : can_drive,
-        'cost' : cost
+        'cost' : start,
       }, 
       success: function(data) {
+        $('h3').html("Results");
+        $('form').remove();
+        $('.info').append("<li>Hello</li>");
         alert(data);
       },
       error: function() {

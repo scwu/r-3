@@ -1,7 +1,7 @@
 import urllib2
 import simplejson as json
 
-def getDirections(origin, destination, time):
+def getDirectionsTransit(origin, destination, time):
 	api_str = 'http://maps.googleapis.com/maps/api/directions/json?'
 	origin_str = 'origin=' + urllib2.quote(origin)
 	destination_str = 'destination=' + urllib2.quote(destination)

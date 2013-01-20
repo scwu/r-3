@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" href="static/css/style.css"></link>
 
         <script>
+        var start = 0;
   			$(function() {
     			$( "#slider" ).slider({
       				value:5,
@@ -24,6 +25,7 @@
       				max: 10,
       				step: 1,
       				slide: function( event, ui ) {
+                start = ui.value;
         				$( "#cost_value" ).val( ui.value );
                 var time = 10 - ui.value;
                 $( "#time_value" ).val( time );

@@ -4,14 +4,16 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext, Template
 from models import Routes
+from collections import defaultdict
+import MySQLdb as mdb
+import sys
 from BeautifulSoup import BeautifulSoup
 import json as json
-import urllib, re, nltk
+import urllib, re, nltk, time
 import urllib2
 from geopy import geocoders
+from math import radians, cos, sin, asin, sqrt
 
-origin = ''
-destination = ''
 leave_date = ''
 return_date = ''
 own_car = ''
@@ -35,7 +37,16 @@ def find(request):
 	own_car = request.POST['own']
 	can_drive = request.POST['can']
 	cost_weight = request.POST['cost']
-	time_weight = 10 - cost_weight	
+	time_weight = 10 - int(cost_weight)
+	origin_point = getLocations(origin)
+	destination_point = getLocations(destination)
+	distance_driving, duration_driving = getDirectionsDriving(origin, destination)
+	#distance_transit, duration_transit = getDirectionsTransit(origin, destination)
+	if (own_car == 'true'):
+		car_price = gasPrices(origin, destination)
+	else:
+		taxi_price = taxiPrices(origin, distance_driving)
+	getBusPrices(origin, destination)
 	#ALGO HERE YO
 	#MAKE THAT SHIT JSON!!!!
 	#send it back to js
@@ -44,31 +55,25 @@ def find(request):
 
 #python functions
 
-def getLocations():
-	origin = "Buffalo, NY 14226"
-	destination = "206 Brownshill Road, Pittsburgh PA"
+def getLocations(address):
+	origin = address
 	g = geocoders.Google('AIzaSyBdM3HJM_ApE4VnOaCyjm4yk5SHAt5K_-k')
 	(place, point) = g.geocode(origin)
 	(new_place, new_point) = g.reverse(point)
 	list1 = new_place.split(",")
-	print point
-
-	g2 = geocoders.Google('AIzaSyBdM3HJM_ApE4VnOaCyjm4yk5SHAt5K_-k')
-	(place2, point2) = g2.geocode(destination)
-	(new_place2, new_point2) = g.reverse(point2)
-	list2 = new_place2.split(",")
-	print point2
+	return point
 
 #Google Maps API
-def getDirectionsDriving():
+def getDirectionsDriving(origin, destination):
 	api_driving = 'http://maps.googleapis.com/maps/api/directions/json?'
 	origin_api = 'origin=' + urllib2.quote(origin)
 	destination_api = 'destination=' + urllib2.quote(destination)
 	final_drive = api_driving + origin_api + '&' + destination_api + '&sensor=false'
 	response = urllib2.urlopen(final_drive)
 	directions_drive = json.loads(response.read())
-	distance = int(directions['routes'][0]['legs'][0]['distance']['text'][:2])
-	duration = float(directions['routes'][0]['legs'][0]['duration']['value'])/(60)
+	distance = int(directions_drive['routes'][0]['legs'][0]['distance']['text'][:2])
+	duration = float(directions_drive['routes'][0]['legs'][0]['duration']['value'])/(60)
+	return distance, duration
 
 #Google Maps for Transit
 def getDirectionsTransit(origin, destination, time):
@@ -81,11 +86,12 @@ def getDirectionsTransit(origin, destination, time):
 	directions = json.loads(response.read())
 	distance = int(directions['routes'][0]['legs'][0]['distance']['text'][:2])
 	duration = float(directions['routes'][0]['legs'][0]['duration']['value'])/(60)
+	return distance, duration
 
-def getBusPrices():
+def getBusPrices(city_or, city_dest):
 	bus_stop_codes = {'Abilene, TX': '391','Albany, NY': '89','Amherst, MA': '90','Angola, IN': '366','Ann Arbor, MI': '91','Athens, GA': '302','Atlanta, GA': '289','Austin, TX': '320','Baltimore, MD': '143','Big Spring, TX': '393','Binghamton, NY': '93','Birmingham, AL': '292','Boston, MA': '94','Brenham, TX': '335','Buffalo Airport, NY': '273','Buffalo, NY': '95','Burlington, VT': '96','Carthage, TX': '395','Champaign, IL': '98','Charlotte, NC': '99','Chattanooga, TN': '290','Chicago, IL': '100','Christiansburg, VA': '101','Cincinnati, OH': '102','Cleveland, OH': '103','Columbia City, IN': '373','Columbia, MO': '104','Columbus, OH': '105','Dallas/Fort Worth, TX': '317','Dayton-Trotwood, OH': '370','Del Rio, TX': '328','Des Moines, IA': '106','Detroit, MI': '107','Durham, NC': '131','Eagle Pass, TX': '327','East Lansing, MI': '330','El Paso, TX': '397','Elkhart, IN': '367','Fairhaven, MA': '316','Frederick, MD': '109','Ft. Wayne, IN': '365','Gainesville, FL': '296','Galveston, TX': '325','Gary, IN': '369','Giddings, TX': '401','Grand Rapids, MI': '331','Hampton, VA': '110','Harrisburg, PA': '111','Hartford, CT': '112','Houston, TX': '318','Humble, TX': '334','Indianapolis, IN': '115','Iowa City, IA': '116','Jacksonville, FL': '295','Kansas City, MO': '117','Kenton, OH': '362','Knoxville, TN': '118','La Grange, TX': '333','La Marque, TX': '337','Las Vegas, NV': '417','Lima, OH': '363','Little Rock, AR': '324','Livingston, TX': '402','Los Angeles, CA': '390','Louisville, KY': '298','Lubbock, TX': '403','Lufkin, TX': '404','Madison, U of Wisc, WI': '300','Madison, WI': '119','Memphis, TN': '120','Midland, TX': '405','Milwaukee, WI': '121','Minneapolis, MN': '144','Mobile, AL': '294','Montgomery, AL': '293','Morgantown, WV': '299','Muncie, IN': '372','Nacogdoches, TX': '406','Nashville , TN': '291','New Brunswick, NJ': '305','New Haven, CT': '122','New Orleans, LA': '303','New York, NY': '123','Newark, DE': '389','Norman, OK': '322','Oakland, CA': '413','Oklahoma City, OK': '323','Omaha, NE': '126','Orlando, FL': '297','Philadelphia, PA': '127','Pittsburgh, PA': '128','Plymouth, IN': '375','Portland, ME': '129','Prairie View, TX': '336','Princeton, NJ': '304','Providence, RI': '130','Richmond, IN': '371','Richmond, VA': '132','Ridgewood, NJ': '133','Riverside, CA': '416','Rochester, NY': '134','Sacramento, CA': '415','San Angelo, TX': '329','San Antonio, TX': '321','San Francisco, CA': '414','San Jose, CA': '412','Saratoga Springs, NY': '301','Secaucus, NJ': '135','Shreveport, LA': '332','South Bend, IN': '368','Sparks, NV': '419','Springfield, MO': '411','St Louis, MO': '136','State College, PA': '137','Storrs, CT': '138','Syracuse, NY': '139','Texarkana, AR': '407','Toledo, OH': '140','Toronto, ON': '145','Uvalde, TX': '326','Valparaiso, IN': '376','Van Wert, OH': '364','Warsaw, IN': '374','Washington, DC': '142'}
-	origin_city = city_or
-	destination_city = city_dest
+	origin_city = 'New York, NY'
+	destination_city = 'Philadelphia, PA'
 	url = "http://us.megabus.com/JourneyResults.aspx?originCode=" + bus_stop_codes[origin_city] + "&destinationCode=" + bus_stop_codes[destination_city] + "&outboundDepartureDate=1%2f20%2f2013&inboundDepartureDate=&passengerCount=1&transportType=0&concessionCount=0&nusCount=0&outboundWheelchairSeated=0&outboundOtherDisabilityCount=0&inboundWheelchairSeated=0&inboundOtherDisabilityCount=0&outboundPcaCount=0&inboundPcaCount=0&promotionCode=&withReturn=0"
 	html = urllib.urlopen(url)
 	soup = BeautifulSoup(html)
@@ -106,6 +112,7 @@ def getBusPrices():
 		if x:
 			ticket.append(line)
 	tickets_dics = []
+	current = time.mktime(time.gmtime())
 	
 	for ticket in tickets:
 		ticket_dic = {}
@@ -118,12 +125,65 @@ def getBusPrices():
 		ticket_dic["duration"] = ticket[19]
 		ticket_dic["price"] = ticket[32]
 		tickets_dics.append(ticket_dic)
+		r = Routes(origin = ticket[3], destination = ticket[12],  origin_address = ticket[5], origin_time = ticket[2], destination_address = ticket[4], \
+			destination_time = ticket[11], brand = "Megabus", types="plane", cost = ticket[32], time = ticket[19], current_time = current)
+		r.save()
 	
 	'''	
 	for value in tickets_dics:
 		for k,v in value.iteritems():
 			print k,v
 	'''
-			
+
+def gasPrices(origin, destination):
+	from_address = origin
+	to_address = destination
+	new_from_address = from_address.replace(" ", "+")
+	new_to_address = to_address.replace(" ", "+")
+	url = "http://www.travelmath.com/cost-of-driving/from/" + new_from_address + "/to/" + new_to_address
+	html = urllib.urlopen(url)
+	for line in html:
+		if "costofdriving" and "$" in line:
+			one_way_cost = nltk.clean_html(line.split("one-way")[0].replace("$", ""))
+			round_trip_cost = nltk.clean_html(line.split("one-way")[1].replace("round trip", "").replace("$", "")).replace('/ ', "")
+			break
+	fout.close()
+	return one_way_cost
+
+def taxiPrices(origin, duration):
+	city = origin
+	miles = duration
+	url = "http://www.taxigrab.com/taxi-fare-calculator.php?city=" + city + "&passengers=1&miles=" + str(miles) + "&done=true&Submit=Calculate+taxi+fare"
+	html = urllib.urlopen(url)
+	for line in html:
+		if "The estimated cost for your ride in" in line:
+			cost = nltk.clean_html(line).split("$")[1].split("  ")[0]		
+	print cost
+
+def haversine(lon1, lat1, lon2, lat2):
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+    # haversine formula 
+    dlon = lon2 - lon1 
+    dlat = lat2 - lat1 
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a)) 
+    km = 6367 * c
+    miles = 0.621371 * km
+    return miles
+
+import heapq
+
+def nearest_airports(current_lat, current_lon):
+    haversine_values = []
+    reverse_dic = {}
+    for entry in total:
+        dist = haversine_distance(current_lat, current_lon, float(entry.split(":")[1].split(",")[0]), float(entry.split(":")[1].split(",", [1])))
+        haversine_values.append(dist)
+        reverse_dic[dist] = entry
+    three_smallest = heapq.nsmallest(3, haversine_values)
+    airports = []
+    for items in three_smallest:
+        airports.append(reverse_dic[items])
+    return airports
 			
 
