@@ -1,0 +1,1493 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "zzzz-zzzz",
+      "name" : "Airport Codes mapped to Latitude/Longitude in the United States",
+      "averageRating" : 0,
+      "displayType" : "table",
+      "numberOfComments" : 0,
+      "oid" : 0,
+      "publicationAppendEnabled" : false,
+      "publicationStage" : "unpublished",
+      "rowsUpdatedAt" : 1313892389,
+      "rowsUpdatedBy" : "vc35-nh3p",
+      "signed" : false,
+      "tableId" : 211501,
+      "totalTimesRated" : 0,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : 2268466,
+        "name" : "locationID",
+        "dataTypeName" : "text",
+        "fieldName" : "locationid",
+        "position" : 1,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1251778,
+        "width" : 145,
+        "format" : {
+          "datatype_name" : "Text"
+        }
+      }, {
+        "id" : 2268467,
+        "name" : "Latitude",
+        "dataTypeName" : "number",
+        "fieldName" : "latitude",
+        "position" : 2,
+        "renderTypeName" : "number",
+        "tableColumnId" : 1251779,
+        "width" : 118,
+        "format" : {
+          "aggregate" : "sum",
+          "precision" : "4",
+          "datatype_name" : "Number"
+        }
+      }, {
+        "id" : 2268468,
+        "name" : "Longitude",
+        "dataTypeName" : "number",
+        "fieldName" : "longitude",
+        "position" : 3,
+        "renderTypeName" : "number",
+        "tableColumnId" : 1251780,
+        "width" : 130,
+        "format" : {
+          "precision" : "4",
+          "datatype_name" : "Number"
+        }
+      } ],
+      "grants" : [ {
+        "inherited" : true,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        },
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+      },
+      "query" : {
+        "filterCondition" : {
+          "type" : "operator",
+          "value" : "AND",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "OR",
+            "children" : [ {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "PHL"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "BOS"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "BWI"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "AUS"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "SEA"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "DEN"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "SFO"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "SDF"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "BDL"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "JFK"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "LGA"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "EWR"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "IAD"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "DCA"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "SAT"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "DFW"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "IAH"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "HOU"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "PDX"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "SLC"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "LAX"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "OAK"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "SMF"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "SAN"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "SJC"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "STL"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "IND"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "LAS"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "PHX"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "FLL"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "RSW"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "MIA"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "MCO"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "TPA"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "ATL"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "MEM"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "BNA"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "MSY"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "MSP"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "MDW"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "ORD"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "DTW"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "CLE"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "CVG"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "CMH"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "PIT"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "CLT"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            }, {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 2268466,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "RDU"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            } ],
+            "metadata" : {
+              "tableColumnId" : {
+                "211501" : 1251778
+              },
+              "operator" : "EQUALS"
+            }
+          } ],
+          "metadata" : {
+            "unifiedVersion" : 2
+          }
+        }
+      },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "vc35-nh3p",
+        "displayName" : "Public Datasets",
+        "emailUnsubscribed" : true,
+        "privacyControl" : "login",
+        "profileImageUrlLarge" : "/images/profile/3694/7070/recovery_gov_symbol_large.jpg",
+        "profileImageUrlMedium" : "/images/profile/3694/7070/recovery_gov_symbol_thumb.jpg",
+        "profileImageUrlSmall" : "/images/profile/3694/7070/recovery_gov_symbol_tiny.jpg",
+        "profileLastModified" : 1285191460,
+        "screenName" : "Public Datasets"
+      },
+      "viewFilters" : {
+        "type" : "operator",
+        "value" : "AND",
+        "children" : [ {
+          "type" : "operator",
+          "value" : "OR",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "PHL"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "BOS"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "BWI"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "AUS"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "SEA"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "DEN"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "SFO"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "SDF"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "BDL"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "JFK"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "LGA"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "EWR"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "IAD"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "DCA"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "SAT"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "DFW"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "IAH"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "HOU"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "PDX"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "SLC"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "LAX"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "OAK"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "SMF"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "SAN"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "SJC"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "STL"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "IND"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "LAS"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "PHX"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "FLL"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "RSW"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "MIA"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "MCO"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "TPA"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "ATL"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "MEM"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "BNA"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "MSY"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "MSP"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "MDW"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "ORD"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "DTW"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "CLE"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "CVG"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "CMH"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "PIT"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "CLT"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          }, {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 2268466,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "RDU"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          } ],
+          "metadata" : {
+            "tableColumnId" : {
+              "211501" : 1251778
+            },
+            "operator" : "EQUALS"
+          }
+        } ],
+        "metadata" : {
+          "unifiedVersion" : 2
+        }
+      },
+      "flags" : [ "unsaved" ]
+    }
+  },
+  "data" : [ [ 1077, "DBBDA5AA-2EE6-47FE-98BE-DF3CB104B117", 1077, 1247781711, "278324", 1247781711, "278324", null, "PHX", "33.43416667", "112.0116667" ]
+, [ 1418, "4FE7EA2A-5576-4141-8624-AAFFE038D04F", 1418, 1247781711, "278324", 1247781711, "278324", null, "LAX", "33.9425", "118.4072222" ]
+, [ 1473, "A7BF2538-20C0-4E4B-BF68-8319C57101FE", 1473, 1247781711, "278324", 1247781711, "278324", null, "OAK", "37.72138889", "122.2208333" ]
+, [ 1557, "81262588-4853-41B2-BCB3-BAD40AA9870C", 1557, 1247781711, "278324", 1247781711, "278324", null, "SMF", "38.69555556", "121.5908333" ]
+, [ 1570, "C2ABA99C-2D7C-4450-8A37-1E7643C0FA2D", 1570, 1247781711, "278324", 1247781711, "278324", null, "SAN", "32.73361111", "117.1897222" ]
+, [ 1572, "EFD7BDD1-8F72-43A3-97D0-2FE925CC463F", 1572, 1247781711, "278324", 1247781711, "278324", null, "SFO", "37.61888889", "122.375" ]
+, [ 1574, "91DAC48B-F644-47D2-BA77-FFF709AAD055", 1574, 1247781711, "278324", 1247781711, "278324", null, "SJC", "37.36277778", "121.9291667" ]
+, [ 1754, "FDDFAC0D-F3F7-4A41-9FB1-CF9E9F6F959F", 1754, 1247781712, "278324", 1247781712, "278324", null, "DEN", "39.86166667", "104.6730556" ]
+, [ 1998, "14840B7E-6A42-4939-A21C-08814B43AA2D", 1998, 1247781712, "278324", 1247781712, "278324", null, "BDL", "41.93888889", "72.68333333" ]
+, [ 1999, "F432E60A-F809-4BE9-BA86-D43763F5246F", 1999, 1247781712, "278324", 1247781712, "278324", null, "DCA", "38.85222222", "77.03777778" ]
+, [ 2000, "2E501AE3-BA30-4630-9E3E-856B9A47CF89", 2000, 1247781712, "278324", 1247781712, "278324", null, "IAD", "38.9475", "77.46" ]
+, [ 2168, "34158DC4-E23F-4536-B937-FE63859CEF64", 2168, 1247781712, "278324", 1247781712, "278324", null, "FLL", "26.07258333", "80.15277778" ]
+, [ 2175, "9729F85D-3E82-46A3-87FA-C682EA404C90", 2175, 1247781712, "278324", 1247781712, "278324", null, "RSW", "26.53616667", "81.75527778" ]
+, [ 2352, "49677427-6C16-4AB8-9A3E-17290D7207A8", 2352, 1247781712, "278324", 1247781712, "278324", null, "MIA", "25.79325", "80.29055556" ]
+, [ 2409, "A22D5203-43A7-453B-BBE1-493F09231BD7", 2409, 1247781712, "278324", 1247781712, "278324", null, "MCO", "28.42944444", "81.30888889" ]
+, [ 2489, "875E0B07-053D-4B24-9A0E-D79E6D37EF15", 2489, 1247781712, "278324", 1247781712, "278324", null, "TPA", "27.97555556", "82.53333333" ]
+, [ 2551, "C63A7D5E-EF7F-43C1-AA81-06B7E0BEFBB3", 2551, 1247781712, "278324", 1247781712, "278324", null, "ATL", "33.63666667", "84.42805556" ]
+, [ 3401, "A301A865-E3A1-4370-9E88-88B54EB7558B", 3401, 1247781713, "278324", 1247781713, "278324", null, "MDW", "41.78611111", "87.7525" ]
+, [ 3402, "2D1D5A78-6E35-4E28-991E-3C43594EC66E", 3402, 1247781713, "278324", 1247781713, "278324", null, "ORD", "41.98083333", "87.90666667" ]
+, [ 4046, "D59E436E-4332-443B-B870-45389538312E", 4046, 1247781714, "278324", 1247781714, "278324", null, "IND", "39.71722222", "86.29472222" ]
+, [ 4686, "44172A7D-52F1-4C89-BF08-4EF1D0DAB482", 4686, 1247781715, "278324", 1247781715, "278324", null, "CVG", "39.04888889", "84.66777778" ]
+, [ 4742, "5B01F7C1-E98E-4477-BDCF-1334CF0D81D1", 4742, 1247781715, "278324", 1247781715, "278324", null, "SDF", "38.17416667", "85.73638889" ]
+, [ 4961, "5C9A5CE2-70B2-4EF1-BA8C-E84A232693DA", 4961, 1247781715, "278324", 1247781715, "278324", null, "MSY", "29.99333333", "90.25805556" ]
+, [ 5042, "91CE1137-C0D9-4697-BD46-F1ED3BD28E3D", 5042, 1247781715, "278324", 1247781715, "278324", null, "BOS", "42.36305556", "71.00638889" ]
+, [ 5116, "38B70172-DCF3-4527-98DE-47775AAB8D48", 5116, 1247781715, "278324", 1247781715, "278324", null, "BWI", "39.17527778", "76.66833333" ]
+, [ 5456, "C2CCE0B6-DA62-444C-A829-7469DAB8C420", 5456, 1247781716, "278324", 1247781716, "278324", null, "DTW", "42.2125", "83.35333333" ]
+, [ 5951, "7DE6D229-0223-424B-9D0C-A5FFCD3A408A", 5951, 1247781717, "278324", 1247781717, "278324", null, "MSP", "44.88194444", "93.22166667" ]
+, [ 6412, "31D61A5E-4841-4154-A9F0-26C63AA73269", 6412, 1247781719, "278324", 1247781719, "278324", null, "STL", "38.74861111", "90.37" ]
+, [ 6937, "F4ED528A-2050-4217-9B41-1EBFBFB2F29F", 6937, 1247781720, "278324", 1247781720, "278324", null, "CLT", "35.21388889", "80.94305556" ]
+, [ 7124, "73E89DC0-B023-4ED0-9402-E533E39464F8", 7124, 1247781720, "278324", 1247781720, "278324", null, "RDU", "35.87777778", "78.7875" ]
+, [ 7797, "B2115F13-FD3E-4925-BBBE-050CEB39E950", 7797, 1247781720, "278324", 1247781720, "278324", null, "EWR", "40.6925", "74.16861111" ]
+, [ 8026, "8040FF66-50F6-419A-B5E1-94BAEE4583E8", 8026, 1247781720, "278324", 1247781720, "278324", null, "LAS", "36.08", "115.1522222" ]
+, [ 8328, "C2C19C37-87BD-4B85-968F-8648B6095E4E", 8328, 1247781720, "278324", 1247781720, "278324", null, "JFK", "40.63972222", "73.77888889" ]
+, [ 8329, "CA9F7C64-29EB-4EB9-AD36-480920BB18C5", 8329, 1247781720, "278324", 1247781720, "278324", null, "LGA", "40.77722222", "73.8725" ]
+, [ 8582, "439F1A52-0DEB-434B-8B08-D873CD82CDC1", 8582, 1247781721, "278324", 1247781721, "278324", null, "CLE", "41.40944444", "81.855" ]
+, [ 8597, "3F0AA6CB-BDF7-43C0-8FF9-F9D7E78554E5", 8597, 1247781721, "278324", 1247781721, "278324", null, "CMH", "39.99805556", "82.89194444" ]
+, [ 9516, "A4C4DBE5-A2C0-4BC8-B56D-0A3E20470D1B", 9516, 1247781723, "278324", 1247781723, "278324", null, "PDX", "45.58833333", "122.5975" ]
+, [ 9915, "0B4013FF-AFAE-4A0F-82D9-B86D30EF12DB", 9915, 1247781723, "278324", 1247781723, "278324", null, "PHL", "39.87222222", "75.24083333" ]
+, [ 9922, "4BCBAD0E-26C1-4299-B11C-239A6E97723B", 9922, 1247781723, "278324", 1247781723, "278324", null, "PIT", "40.49138889", "80.23277778" ]
+, [ 10500, "99AB006A-46D3-447C-83F2-4D6B3D9CBB0A", 10500, 1247781723, "278324", 1247781723, "278324", null, "MEM", "35.0425", "89.97666667" ]
+, [ 10521, "22F35316-1478-4D13-A959-1C6C2DE2700B", 10521, 1247781723, "278324", 1247781723, "278324", null, "BNA", "36.12444444", "86.67833333" ]
+, [ 10653, "260752C9-B451-4F32-AAD8-58D88C446D9B", 10653, 1247781723, "278324", 1247781723, "278324", null, "AUS", "30.19444444", "97.67" ]
+, [ 10939, "792305E9-0EF6-42B7-882F-C5D7E2917F86", 10939, 1247781723, "278324", 1247781723, "278324", null, "DFW", "32.89694444", "97.03805556" ]
+, [ 11241, "B5245FB3-C8D5-4B70-A6B2-84E972BCB104", 11241, 1247781724, "278324", 1247781724, "278324", null, "IAH", "29.98444444", "95.34138889" ]
+, [ 11252, "F2EDD6B3-2BD0-43DF-826C-A07D2C2CEE86", 11252, 1247781724, "278324", 1247781724, "278324", null, "HOU", "29.64555556", "95.27888889" ]
+, [ 11747, "9077B71E-73E0-45F2-BF7F-57D1E6DA14FD", 11747, 1247781725, "278324", 1247781725, "278324", null, "SAT", "29.53361111", "98.46972222" ]
+, [ 12102, "AFAEEAF9-BFE7-40A7-9619-319DC0023CDD", 12102, 1247781725, "278324", 1247781725, "278324", null, "SLC", "40.78833333", "111.9777778" ]
+, [ 12722, "0A79FEDD-35E4-4735-8488-F279C76DCD9C", 12722, 1247781725, "278324", 1247781725, "278324", null, "SEA", "47.45", "122.3116667" ]
+ ]
+}
