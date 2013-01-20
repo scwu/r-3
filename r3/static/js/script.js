@@ -18,7 +18,8 @@ $(document).ready(function() {
         'leave' : leave_date,
         'returnd' : return_date,
         'own' : own_car,
-        'can' : can_drive
+        'can' : can_drive,
+        'cost' : cost
       }, 
       success: function(data) {
         alert(data);
